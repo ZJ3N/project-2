@@ -10,20 +10,20 @@
 ## 1. تشغيل قاعدة بيانات PostgreSQL
 
 ```bash
-docker run --name bookstore-db -e POSTGRES_PASSWORD=devpassword -e POSTGRES_DB=bookstore -p 5432:5432 -d postgres:16
+docker run --name bookstore-db2 -e POSTGRES_PASSWORD=devpassword -e POSTGRES_DB=bookstore -p 5432:5432 -d postgres:16
 ```
 
 تأكد أنها جاهزة:
 
 ```bash
-docker exec bookstore-db pg_isready -U postgres -d bookstore
+docker exec bookstore-db2 pg_isready -U postgres -d bookstore
 ```
 
 يجب أن تشوف: `accepting connections`
 
 > لاحقاً، لإيقافها وتشغيلها من جديد (بدون فقدان البيانات):
-> `docker stop bookstore-db` / `docker start bookstore-db`
-> حذف الحاوية نهائياً (وحذف البيانات معها): `docker rm -f bookstore-db`
+> `docker stop bookstore-db2` / `docker start bookstore-db2`
+> حذف الحاوية نهائياً (وحذف البيانات معها): `docker rm -f bookstore-db2`
 
 ## 2. تجهيز بيئة Python
 
